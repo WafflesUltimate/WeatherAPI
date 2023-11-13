@@ -1,0 +1,10 @@
+C:\Users\Waffl\Desktop\repos\WeatherAPI\bin\Debug\WeatherAPI.exe.config
+C:\Users\Waffl\Desktop\repos\WeatherAPI\bin\Debug\WeatherAPI.exe
+C:\Users\Waffl\Desktop\repos\WeatherAPI\bin\Debug\WeatherAPI.pdb
+C:\Users\Waffl\Desktop\repos\WeatherAPI\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Waffl\Desktop\repos\WeatherAPI\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Waffl\Desktop\repos\WeatherAPI\obj\Debug\WeatherAPI.csproj.AssemblyReference.cache
+C:\Users\Waffl\Desktop\repos\WeatherAPI\obj\Debug\WeatherAPI.csproj.CoreCompileInputs.cache
+C:\Users\Waffl\Desktop\repos\WeatherAPI\obj\Debug\WeatherAPI.csproj.CopyComplete
+C:\Users\Waffl\Desktop\repos\WeatherAPI\obj\Debug\WeatherAPI.exe
+C:\Users\Waffl\Desktop\repos\WeatherAPI\obj\Debug\WeatherAPI.pdb
