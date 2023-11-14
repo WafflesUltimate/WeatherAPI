@@ -16,17 +16,17 @@ namespace WeatherAPI
         public static string graffitti = " __          __        _   _                 _____        __     __                 _____ _ _           _______        _               \r\n \\ \\        / /       | | | |               |_   _|       \\ \\   / /                / ____(_) |         |__   __|      | |            _ \r\n  \\ \\  /\\  / /__  __ _| |_| |__   ___ _ __    | |  _ __    \\ \\_/ /__  _   _ _ __  | |     _| |_ _   _     | | ___   __| | __ _ _   _(_)\r\n   \\ \\/  \\/ / _ \\/ _` | __| '_ \\ / _ \\ '__|   | | | '_ \\    \\   / _ \\| | | | '__| | |    | | __| | | |    | |/ _ \\ / _` |/ _` | | | |  \r\n    \\  /\\  /  __/ (_| | |_| | | |  __/ |     _| |_| | | |    | | (_) | |_| | |    | |____| | |_| |_| |    | | (_) | (_| | (_| | |_| |_ \r\n     \\/  \\/ \\___|\\__,_|\\__|_| |_|\\___|_|    |_____|_| |_|    |_|\\___/ \\__,_|_|     \\_____|_|\\__|\\__, |    |_|\\___/ \\__,_|\\__,_|\\__, (_)\r\n                                                                                                 __/ |                          __/ |  \r\n                                                                                                |___/                          |___/ ";
         public static string graffitti2 = "                  ██████                \r\n                ██      ██              \r\n              ██          ████          \r\n            ██              ▒▒██        \r\n        ████▒▒                ██        \r\n  ██████      ▒▒            ▒▒▒▒████    \r\n██▒▒            ▒▒        ▒▒      ▒▒██  \r\n██▒▒▒▒        ▒▒▒▒▒▒▒▒▒▒▒▒          ▒▒██\r\n  ██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██\r\n    ████████▓▓████████████████████████  ";
 
-        public static double[] GetGeoCoordinates() 
-        {
-            var client = new HttpClient();
+      //  public static double[] GetGeoCoordinates() 
+      //  {
+           /* var client = new HttpClient();
             string cityName = null;
             string stateCode = null;
 
             while (cityName == null || cityName.Length < 2)
-            {
+           {
                 Console.WriteLine("Please enter your city name to proceed.");
-                cityName = Console.ReadLine();
-            }
+               cityName = Console.ReadLine();
+           }
 
             while (stateCode == null || stateCode.Length < 2)
             {
@@ -48,8 +48,8 @@ namespace WeatherAPI
             geoCoordinates[1] = double.Parse(lon);
 
             return geoCoordinates;
-        }
-
+           */
+     //   }
 
         public static string KelvinToFahrenheit(string kelvin)
         {
@@ -63,11 +63,17 @@ namespace WeatherAPI
 
         static void Main(string[] args)
         {
+            string zipCode = null;
+
+            while (zipCode == null || zipCode.Length < 2)
+            {
+                Console.WriteLine("Please enter your zip code to proceed.");
+                zipCode = Console.ReadLine();
+            }
+
             var client = new HttpClient();
 
-            var geoCoordinates = GetGeoCoordinates();
-
-            var weatherURL = $"https://api.openweathermap.org/data/2.5/weather?lat={geoCoordinates[0]}&lon={geoCoordinates[1]}&appid=f05f3c5f17273fd2d51fd7c3def4b328";
+            var weatherURL = $"https://api.openweathermap.org/data/2.5/weather?zip={zipCode},US&appid=f05f3c5f17273fd2d51fd7c3def4b328";
 
             var weatherInfo = client.GetStringAsync(weatherURL).Result;
             weatherInfo = weatherInfo.Replace('[', ' ').Replace(']', ' ');
